@@ -36,6 +36,97 @@ public class Job {
     }
 
 
+    @Override
+    public String toString () {
+
+        String format = "\n";
+
+        if ((getName() == null && getEmployer() == null && getLocation() == null && getPositionType() == null && getCoreCompetency() == null) || (getName().isBlank() && getEmployer().toString().isBlank() && getLocation().toString().isBlank() && getPositionType().toString().isBlank() && getCoreCompetency().toString().isBlank())) {
+
+            format += "OOPS! This job does not seem to exist.";
+
+        }
+
+        else {
+
+            format += "ID: " + getId() + '\n';
+
+            // Name
+
+            if (getName().isBlank()) {
+
+                format += "Name: Data not available\n";
+
+            }
+
+            else {
+
+                format += "Name: " + getName() + '\n';
+
+            }
+
+            // Employer
+
+            if (getEmployer().toString().isBlank()) {
+
+                format += "Employer: Data not available\n";
+
+            }
+
+            else {
+
+                format += "Employer: " + getEmployer().toString() + '\n';
+
+            }
+
+            // Location
+
+            if (getLocation().toString().isBlank()) {
+
+                format += "Location: Data not available\n";
+
+            }
+
+            else {
+
+                format += "Location: " + getLocation().toString() + '\n';
+
+            }
+
+            // Position Type
+
+            if (getPositionType().toString().isBlank()) {
+
+                format += "Position Type: Data not available\n";
+
+            }
+
+            else {
+
+                format += "Position Type: " + getPositionType().toString() + '\n';
+
+            }
+
+            // Core Competency
+
+            if (getCoreCompetency().toString().isBlank()) {
+
+                format += "Core Competency: Data not available";
+
+            }
+
+            else {
+
+                format += "Core Competency: " + getCoreCompetency().toString();
+
+            }
+
+        }
+
+        return format + '\n';
+
+    }
+
 
     // TODO: Add custom equals and hashCode methods. Consider two Job objects "equal" when their id fields
     //  match.
