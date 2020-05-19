@@ -26,8 +26,6 @@ public class JobTest {
     public void emptyTest() {
 
         assertFalse(jobOne.getId() == jobTwo.getId());
-        assertEquals(1, jobOne.getId());
-        assertEquals(2, jobTwo.getId());
 
     }
 
@@ -61,6 +59,18 @@ public class JobTest {
         Job jobFour = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
 
         assertFalse(jobThree.equals(jobFour));
+
+    }
+
+    // Test to see if format starts and end with a blank line
+
+    @Test
+    public void testJobsToStringBlankLines () {
+
+        Job jobThree = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
+
+        assertEquals('\n', jobThree.toString().charAt(0));
+        assertEquals('\n', jobThree.toString().charAt(jobThree.toString().length()-1));
 
     }
 
