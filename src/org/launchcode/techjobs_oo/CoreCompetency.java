@@ -10,19 +10,4 @@ public class CoreCompetency extends JobField {
 
     }
 
-    // Custom equals, and hashCode methods:
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof CoreCompetency)) return false;
-        CoreCompetency coreCompetency = (CoreCompetency) o;
-        return getId() == coreCompetency.getId();
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(getId());
-    }
-
 }
